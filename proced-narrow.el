@@ -33,7 +33,7 @@
 
 ;;; Commentary:
 
-;; This package provdes live filtering of processes in proced buffer.  In general, after calling the
+;; This package provdes live filtering of processes in proced buffers.  In general, after calling the
 ;; respective narrowing function you type a filter string into the minibuffer.  After each change
 ;; proced-narrow automatically reflects the change in the buffer.  Typing C-g will cancel the
 ;; narrowing and restore the origininal view, typing RET will exit the live filtering and leave the
