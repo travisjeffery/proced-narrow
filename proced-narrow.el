@@ -89,10 +89,6 @@ match but the order does not matter."
   "Minor mode for indicating when narrowing is in progress."
   :lighter " proced-narrow")
 
-(defun proced-narrow--disable-on-revert ()
-  "Disable `proced-narrow-mode' after revert."
-  (proced-narrow-mode -1))
-
 (defun proced-narrow--internal (filter-function)
   "Narrow a proced buffer to the processes matching a filter.
 
