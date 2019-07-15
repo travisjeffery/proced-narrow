@@ -6,6 +6,7 @@
 ;; Author: Travis Jeffery <tj@travisjeffery.com>
 ;; Maintainer: Travis Jeffery <tj@travisjeffery.com>
 ;; URL: https://github.com/travisjeffery/proced-narrow
+;; Package-Version: 20190715.1744
 ;; Keywords: processes, proced
 ;; Created: 15th July 2019
 ;; Version: 1.0.0
@@ -49,6 +50,7 @@
   :group 'proced-hacks
   :prefix "proced-narrow-")
 
+;;;###autoload
 (defvar proced-narrow-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "C-g") 'minibuffer-keyboard-quit)
@@ -132,6 +134,7 @@ read from the minibuffer."
   (when proced-narrow-buffer
     (add-hook 'post-command-hook 'proced-narrow--live-update nil :local)))
 
+;;;###autoload
 (add-hook 'minibuffer-setup-hook 'proced-narrow--minibuffer-setup)
 
 (defun proced-narrow--live-update ()
