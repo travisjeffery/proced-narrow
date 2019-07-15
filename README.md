@@ -21,7 +21,7 @@ bound to g).
 1. Open up proced (`M-x proced`)
 2. Press `/` (given you've followed the installation instructions
 above)
-3. Type the name of the process you want to filter for e.g. `chrome`
+3. Type the name of the process you want to filter for e.g. `emacs`
 4. Press RET to keep the narrowed buffer or C-g to cancel the narrowing and restore the original
    view.
 
