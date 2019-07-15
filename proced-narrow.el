@@ -1,6 +1,5 @@
 ;;; proced-narrow.el --- Live-narrowing of search results for proced. -*- lexical-binding: t; -*-
 
-
 ;; Copyright (C) 2019 Travis Jeffery
 
 ;; Author: Travis Jeffery <tj@travisjeffery.com>
