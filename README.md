@@ -28,3 +28,10 @@ above)
 ## License
 
 GNU General Public License, Version 3.0
+
+---
+
+- [travisjeffery.com](http://travisjeffery.com)
+- GitHub [@travisjeffery](https://github.com/travisjeffery)
+- Twitter [@travisjeffery](https://twitter.com/travisjeffery)
+- Medium [@travisjeffery](https://medium.com/@travisjeffery)
