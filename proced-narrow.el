@@ -44,6 +44,15 @@
 (require 'proced)
 (require 'dash)
 
+(defvar proced-narrow-buffer nil
+  "Proced buffer we are currently filtering.")
+
+(defvar proced-narrow--minibuffer-content ""
+  "Content of the minibuffer during narrowing.")
+
+(defvar proced-narrow-filter-function 'identity
+  "Filter function used to filter the proced view.")
+
 (defgroup proced-narrow ()
   "Live-narrowing of search results for proced."
   :group 'proced-hacks
@@ -114,15 +123,6 @@ read from the minibuffer."
   (let ((inhibit-read-only t))
     (remove-list-of-text-properties (point-min) (point-max)
                                     '(invisible :proced-narrow))))
-
-(defvar proced-narrow-buffer nil
-  "Proced buffer we are currently filtering.")
-
-(defvar proced-narrow--minibuffer-content ""
-  "Content of the minibuffer during narrowing.")
-
-(defvar proced-narrow-filter-function 'identity
-  "Filter function used to filter the proced view.")
 
 (defun proced-narrow--minibuffer-setup ()
   "Set up the minibuffer for live filtering."
