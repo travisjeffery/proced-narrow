@@ -127,10 +127,10 @@ read from the minibuffer."
 (defun proced-narrow--minibuffer-setup ()
   "Set up the minibuffer for live filtering."
   (when proced-narrow-buffer
-    (add-hook 'post-command-hook 'proced-narrow--live-update nil :local)))
+    (add-hook 'post-command-hook #'proced-narrow--live-update nil :local)))
 
 ;;;###autoload
-(add-hook 'minibuffer-setup-hook 'proced-narrow--minibuffer-setup)
+(add-hook 'minibuffer-setup-hook #'proced-narrow--minibuffer-setup)
 
 (defun proced-narrow--live-update ()
   "Update the proced buffer based on the contents of the minibuffer."
