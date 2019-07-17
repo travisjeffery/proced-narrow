@@ -8,7 +8,7 @@
 ;; Package-Version: 20190715.1744
 ;; Keywords: processes, proced
 ;; Created: 15th July 2019
-;; Version: 1.0.1
+;; Version: 1.0.2
 ;; Package-requires: ((dash "2.7.0") (emacs "24"))
 
 ;; This file is NOT part of GNU Emacs.
