@@ -5,7 +5,6 @@
 ;; Author: Travis Jeffery <tj@travisjeffery.com>
 ;; Maintainer: Travis Jeffery <tj@travisjeffery.com>
 ;; URL: https://github.com/travisjeffery/proced-narrow
-;; Package-Version: 20190715.1744
 ;; Keywords: processes, proced
 ;; Created: 15th July 2019
 ;; Version: 1.0.2
@@ -42,7 +41,7 @@
 ;;; Code:
 
 (require 'proced)
-(require 'dash)
+(require 'seq)
 
 (defvar proced-narrow-buffer nil
   "Proced buffer we are currently filtering.")
@@ -80,7 +79,7 @@ match but the order does not matter."
 (defun proced-narrow--string-filter (filter)
   "Return t if FILTER is non-nil for the current file."
   (let ((words (split-string filter " ")))
-    (--all? (save-excursion (search-forward it (line-end-position) t)) words)))
+    (seq-every-p (lambda (it) (save-excursion (search-forward it (line-end-position) t))) words)))
 
 (defun proced-narrow--remove-text-with-property (prop)
   "Delete all text in the current buffer with text property PROP."
@@ -129,7 +128,6 @@ read from the minibuffer."
   (when proced-narrow-buffer
     (add-hook 'post-command-hook #'proced-narrow--live-update nil :local)))
 
-;;;###autoload
 (add-hook 'minibuffer-setup-hook #'proced-narrow--minibuffer-setup)
 
 (defun proced-narrow--live-update ()
