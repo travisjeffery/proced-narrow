@@ -7,7 +7,7 @@
 ;; URL: https://github.com/travisjeffery/proced-narrow
 ;; Keywords: processes, proced
 ;; Created: 15th July 2019
-;; Version: 1.0.2
+;; Version: 1.0.3
 ;; Package-requires: ((seq "2.21") (emacs "24"))
 
 ;; This file is NOT part of GNU Emacs.
