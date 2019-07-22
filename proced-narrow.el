@@ -79,7 +79,9 @@ match but the order does not matter."
 (defun proced-narrow--string-filter (filter)
   "Return t if FILTER is non-nil for the current file."
   (let ((words (split-string filter " ")))
-    (seq-every-p (lambda (it) (save-excursion (search-forward it (line-end-position) t))) words)))
+    (seq-every-p
+     (lambda (it)
+       (save-excursion (search-forward it (line-end-position) t))) words)))
 
 (defun proced-narrow--remove-text-with-property (prop)
   "Delete all text in the current buffer with text property PROP."
