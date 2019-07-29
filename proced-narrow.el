@@ -8,7 +8,7 @@
 ;; Keywords: processes, proced
 ;; Created: 15th July 2019
 ;; Version: 1.0.3
-;; Package-requires: ((seq "2.21") (emacs "24"))
+;; Package-requires: ((seq "2.20") (emacs "24"))
 
 ;; This file is NOT part of GNU Emacs.
 
