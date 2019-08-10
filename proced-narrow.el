@@ -31,10 +31,10 @@
 
 ;;; Commentary:
 
-;; This package provdes live filtering of processes in proced buffer.  In general, after calling
-;; proced-narrow you type a filter string into the minibufferto filter the list of processes.  After
+;; This package provides live filtering of processes in proced buffer.  In general, after calling
+;; proced-narrow you type a filter string into the minibuffer to filter the list of processes.  After
 ;; each change proced-narrow automatically reflects the change in the buffer.  Typing C-g will
-;; cancel the narrowing and restore the origininal view, typing RET will exit the live filtering and
+;; cancel the narrowing and restore the original view, typing RET will exit the live filtering and
 ;; leave the proced buffer in the narrow state.  To bring it back to the original view, you can call
 ;; `revert buffer' (usually bound to g).
 
@@ -42,6 +42,7 @@
 
 (require 'proced)
 (require 'seq)
+(require 'delsel)
 
 (defvar proced-narrow-buffer nil
   "Proced buffer we are currently filtering.")
@@ -71,8 +72,9 @@
   "Narrow a proced buffer to the processes matching a string.
 
 If the string contains spaces, then each word is matched against
-the process name separately.  To succeed, all of tthem have to
-match but the order does not matter."
+the process name separately.  To succeed, all of them have to
+match but the order does not matter.  To bring it back to the
+original view, you can call `revert buffer' (usually bound to g)."
   (interactive)
   (proced-narrow--internal 'proced-narrow--string-filter))
 
